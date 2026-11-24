@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rohit की personal website और digital portfolio">
+<title>Rohit's World</title>
+<style>
+:root{--bg:#0b1020;--panel:#141d33;--text:#f4f7ff;--muted:#b8c3d9;--accent:#69d5ff;--accent2:#9b8cff}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#0b1020,#111b32);color:var(--text);line-height:1.6}
+header{position:sticky;top:0;background:#0b1020eF;backdrop-filter:blur(10px);border-bottom:1px solid #ffffff18;z-index:5}
+nav{max-width:1050px;margin:auto;padding:14px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.logo{font-weight:800;font-size:1.15rem;color:var(--accent)}
+nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:.95rem}
+nav a:hover{color:var(--accent)}
+main{max-width:1050px;margin:auto;padding:28px 22px}
+.hero{min-height:72vh;display:grid;align-content:center;padding:55px 0}
+.eyebrow{color:var(--accent);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:.8rem}
+h1{font-size:clamp(2.7rem,8vw,5.4rem);line-height:1.05;margin:12px 0}
+h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{max-width:620px;color:var(--muted);font-size:1.12rem}
+.btn{display:inline-block;margin-top:18px;padding:12px 20px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#07101d;text-decoration:none;font-weight:800}
+section{padding:45px 0}
+h2{font-size:2rem;margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid #ffffff16;border-radius:18px;padding:22px}
+.card h3{margin-top:0;color:var(--accent)}
+.card p{color:var(--muted);margin-bottom:0}
+footer{text-align:center;padding:28px 20px;color:var(--muted);border-top:1px solid #ffffff18}
+@media(max-width:620px){nav{align-items:flex-start;flex-direction:column}nav a{margin:0 14px 0 0}.hero{min-height:62vh}}
+</style>
+</head>
+<body>
+<header>
+  <nav>
+    <div class="logo">ROHIT'S WORLD</div>
+    <div><a href="#home">होम</a><a href="#about">परिचय</a><a href="#goals">लक्ष्य</a><a href="#projects">प्रोजेक्ट</a><a href="#contact">संपर्क</a></div>
+  </nav>
+</header>
+<main>
+  <section class="hero" id="home">
+    <div class="eyebrow">Welcome to my website</div>
+    <h1>नमस्ते, मैं <span>Rohit</span> हूँ।</h1>
+    <p class="lead">यह मेरी छोटी-सी डिजिटल दुनिया है—जहाँ मैं अपने बारे में, अपने लक्ष्यों और अपने काम के बारे में साझा करता हूँ।</p>
+    <div><a class="btn" href="#about">मेरे बारे में जानें</a></div>
+  </section>
+  <section id="about">
+    <h2>मेरे बारे में</h2>
+    <div class="card"><p>मेरा नाम Rohit है। मुझे नई चीजें सीखना, नए विचारों पर काम करना और अपनी क्षमताओं को बेहतर बनाना पसंद है। यह वेबसाइट मेरा personal portfolio है।</p></div>
+  </section>
+  <section id="goals">
+    <h2>मेरे लक्ष्य</h2>
+    <div class="grid">
+      <div class="card"><h3>सीखना</h3><p>हर दिन कुछ नया सीखना और अपने ज्ञान को बढ़ाना।</p></div>
+      <div class="card"><h3>बनाना</h3><p>अपने विचारों को उपयोगी projects में बदलना।</p></div>
+      <div class="card"><h3>आगे बढ़ना</h3><p>मेहनत, धैर्य और निरंतर अभ्यास से अपने लक्ष्य हासिल करना।</p></div>
+    </div>
+  </section>
+  <section id="projects">
+    <h2>मेरे प्रोजेक्ट</h2>
+    <div class="card"><h3>जल्द आ रहा है!</h3><p>यहाँ Rohit अपने बनाए हुए projects, उपलब्धियाँ और काम जोड़ सकता है।</p></div>
+  </section>
+  <section id="contact">
+    <h2>संपर्क</h2>
+    <div class="card"><p>यहाँ अपना सार्वजनिक ईमेल या सोशल मीडिया लिंक जोड़ें। निजी फोन नंबर या घर का पता सार्वजनिक वेबसाइट पर साझा न करें।</p></div>
+  </section>
+</main>
+<footer>© 2026 Rohit's World · Made with curiosity</footer>
+</body>
+</html>
