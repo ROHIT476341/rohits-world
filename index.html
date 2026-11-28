@@ -1,71 +1,161 @@
+
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Rohit की personal website और digital portfolio">
-<title>Rohit's World</title>
-<style>
-:root{--bg:#0b1020;--panel:#141d33;--text:#f4f7ff;--muted:#b8c3d9;--accent:#69d5ff;--accent2:#9b8cff}
-*{box-sizing:border-box;scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#0b1020,#111b32);color:var(--text);line-height:1.6}
-header{position:sticky;top:0;background:#0b1020eF;backdrop-filter:blur(10px);border-bottom:1px solid #ffffff18;z-index:5}
-nav{max-width:1050px;margin:auto;padding:14px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px}
-.logo{font-weight:800;font-size:1.15rem;color:var(--accent)}
-nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:.95rem}
-nav a:hover{color:var(--accent)}
-main{max-width:1050px;margin:auto;padding:28px 22px}
-.hero{min-height:72vh;display:grid;align-content:center;padding:55px 0}
-.eyebrow{color:var(--accent);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:.8rem}
-h1{font-size:clamp(2.7rem,8vw,5.4rem);line-height:1.05;margin:12px 0}
-h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{max-width:620px;color:var(--muted);font-size:1.12rem}
-.btn{display:inline-block;margin-top:18px;padding:12px 20px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#07101d;text-decoration:none;font-weight:800}
-section{padding:45px 0}
-h2{font-size:2rem;margin:0 0 18px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.card{background:var(--panel);border:1px solid #ffffff16;border-radius:18px;padding:22px}
-.card h3{margin-top:0;color:var(--accent)}
-.card p{color:var(--muted);margin-bottom:0}
-footer{text-align:center;padding:28px 20px;color:var(--muted);border-top:1px solid #ffffff18}
-@media(max-width:620px){nav{align-items:flex-start;flex-direction:column}nav a{margin:0 14px 0 0}.hero{min-height:62vh}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090711" />
+  <meta name="description" content="Rohit's World — Your ideas, your skills, your digital universe." />
+  <title>Rohit's World | Your Digital Universe</title>
+  <style>
+    :root{
+      --bg:#090711;--bg2:#100b1d;--panel:rgba(255,255,255,.055);--panel2:rgba(255,255,255,.085);
+      --text:#f7f3ff;--muted:#aaa1bd;--purple:#a855f7;--violet:#7c3aed;--pink:#e879f9;
+      --line:rgba(211,184,255,.14);--shadow:0 24px 80px rgba(83,31,145,.22);
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;background:radial-gradient(ellipse at 78% 5%,rgba(126,34,206,.20),transparent 34%),radial-gradient(ellipse at 0% 45%,rgba(88,28,135,.14),transparent 35%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none} button{font:inherit}
+    .container{width:min(1120px,calc(100% - 40px));margin:auto}
+    .nav-wrap{position:sticky;top:0;z-index:20;background:rgba(9,7,17,.76);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-weight:850;letter-spacing:-.7px;font-size:1.08rem;display:flex;align-items:center;gap:10px}
+    .brand-mark{width:34px;height:34px;border-radius:11px;background:linear-gradient(135deg,var(--violet),var(--pink));display:grid;place-items:center;box-shadow:0 8px 28px #8b5cf655}
+    .brand-mark span{font-weight:900;color:white}
+    .nav-links{display:flex;align-items:center;gap:25px;color:#c9c0d8;font-size:.9rem}
+    .nav-links a:hover{color:white}.nav-actions{display:flex;align-items:center;gap:10px}
+    .icon-btn,.menu-btn{border:1px solid var(--line);background:var(--panel);color:var(--text);width:40px;height:40px;border-radius:13px;cursor:pointer}
+    .menu-btn{display:none}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 18px;border-radius:13px;font-weight:700;font-size:.92rem;border:1px solid transparent;transition:.25s;cursor:pointer}
+    .btn-primary{background:linear-gradient(115deg,#7c3aed,#a855f7 58%,#d946ef);color:white;box-shadow:0 10px 30px #9333ea38}
+    .btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 38px #9333ea60}
+    .btn-ghost{border-color:var(--line);background:var(--panel);color:var(--text)}
+    .btn-ghost:hover{background:var(--panel2);transform:translateY(-2px)}
+    .hero{min-height:650px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:50px;padding:86px 0 92px;position:relative}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid #a855f74a;background:#a855f714;color:#d9b8ff;padding:7px 12px;border-radius:99px;font-size:.78rem;font-weight:700;letter-spacing:.3px}
+    .dot{width:7px;height:7px;background:#c084fc;border-radius:50%;box-shadow:0 0 14px #c084fc}
+    h1{font-size:clamp(3rem,6.4vw,5.6rem);line-height:1.02;letter-spacing:-4px;margin:23px 0 20px;font-weight:850}
+    .gradient-text{background:linear-gradient(100deg,#fff 5%,#d8b4fe 48%,#c084fc 75%,#f0abfc);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero-copy{max-width:570px;color:var(--muted);font-size:1.08rem}
+    .hero-buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .mini-proof{display:flex;align-items:center;gap:13px;margin-top:38px;color:#b8afc7;font-size:.83rem}
+    .avatar-stack{display:flex}.avatar-stack span{width:29px;height:29px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#6d28d9,#c026d3);border:2px solid var(--bg);margin-left:-7px;font-size:.68rem}.avatar-stack span:first-child{margin-left:0}
+    .visual{min-height:430px;position:relative;display:grid;place-items:center}
+    .orb{position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e9d5ff 0%,#a855f7 17%,#6d28d9 43%,#25103f 70%,transparent 72%);filter:drop-shadow(0 0 70px #9333ea55);animation:float 7s ease-in-out infinite}
+    .orbit{position:absolute;width:440px;height:170px;border:1px solid #c084fc55;border-radius:50%;transform:rotate(-25deg);box-shadow:0 0 30px #9333ea16}
+    .orbit:after{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:#f0abfc;top:22px;left:48px;box-shadow:0 0 22px #f0abfc}
+    .glass-card{position:absolute;background:rgba(25,16,42,.76);border:1px solid #d8b4fe30;backdrop-filter:blur(18px);border-radius:18px;padding:15px 17px;box-shadow:var(--shadow)}
+    .float-card-one{top:48px;right:0}.float-card-two{bottom:50px;left:0}
+    .glass-label{color:#a99bbd;font-size:.72rem}.glass-value{font-weight:800;font-size:1.05rem}
+    .spark{color:#e9b8ff;font-size:1.2rem}
+    @keyframes float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-16px) scale(1.025)}}
+    section{padding:76px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:30px}
+    .kicker{color:#c084fc;font-weight:800;text-transform:uppercase;letter-spacing:1.7px;font-size:.72rem}
+    h2{font-size:clamp(2rem,4vw,3rem);letter-spacing:-1.7px;line-height:1.12;margin:9px 0 0}
+    .section-desc{max-width:470px;color:var(--muted);margin:0}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .feature{padding:23px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.025));min-height:210px;transition:.25s;position:relative;overflow:hidden}
+    .feature:before{content:"";position:absolute;width:140px;height:140px;right:-65px;top:-65px;background:#9333ea22;filter:blur(12px);border-radius:50%}
+    .feature:hover{transform:translateY(-6px);border-color:#b47aff70;background:rgba(168,85,247,.09)}
+    .feature-icon{width:45px;height:45px;border-radius:14px;display:grid;place-items:center;background:#8b5cf626;border:1px solid #c084fc30;font-size:1.35rem;margin-bottom:20px}
+    .feature h3{margin:0 0 7px;font-size:1.05rem}.feature p{margin:0;color:var(--muted);font-size:.86rem}
+    .arrow{display:inline-block;margin-top:16px;color:#d8b4fe;font-size:.82rem;font-weight:750}
+    .about-panel{display:grid;grid-template-columns:.8fr 1.2fr;gap:35px;align-items:center;padding:34px;border-radius:26px;border:1px solid var(--line);background:linear-gradient(120deg,#211334aa,#100b1d);box-shadow:var(--shadow)}
+    .about-art{min-height:250px;border-radius:20px;background:radial-gradient(circle at 50% 40%,#a855f755,transparent 45%),linear-gradient(145deg,#2a1744,#120c20);display:grid;place-items:center;font-size:5rem}
+    .about-panel p{color:var(--muted)}
+    .project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .project{padding:22px;border:1px solid var(--line);border-radius:19px;background:var(--panel)}
+    .project-top{height:115px;border-radius:13px;background:linear-gradient(135deg,#31145a,#6d28d9 60%,#c026d3);display:grid;place-items:center;font-size:2.5rem;margin-bottom:17px}
+    .project h3{margin:0 0 6px}.project p{color:var(--muted);font-size:.87rem;margin:0}
+    .cta{padding:38px;border-radius:25px;text-align:center;border:1px solid #b47aff45;background:radial-gradient(ellipse at 50% 0%,#9333ea35,transparent 65%),#150d23}
+    .cta p{color:var(--muted);max-width:560px;margin:12px auto 22px}
+    footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.84rem}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s,transform .65s}.reveal.visible{opacity:1;transform:none}
+    body.light{--bg:#f8f5ff;--bg2:#eee7fa;--panel:rgba(74,35,110,.055);--panel2:rgba(74,35,110,.09);--text:#1b1029;--muted:#6c607b;--line:rgba(91,48,130,.16);background:radial-gradient(ellipse at 80% 5%,#d9c2ff88,transparent 38%),#f8f5ff}
+    body.light .nav-wrap{background:rgba(248,245,255,.82)}body.light .glass-card{background:rgba(255,255,255,.78)}body.light .about-panel{background:linear-gradient(120deg,#eee2ff,#fff)}
+    body.light .cta{background:radial-gradient(ellipse at 50% 0%,#d8b4fe88,transparent 65%),#f1e9ff}
+    @media(max-width:900px){.hero{grid-template-columns:1fr;gap:10px;padding-top:65px}.visual{min-height:390px}.grid{grid-template-columns:repeat(2,1fr)}.about-panel{grid-template-columns:1fr}.project-grid{grid-template-columns:1fr 1fr}.section-head{align-items:start;flex-direction:column}}
+    @media(max-width:640px){.container{width:min(100% - 30px,1120px)}nav{height:66px}.nav-links{display:none;position:absolute;top:66px;left:0;right:0;padding:18px 22px 22px;background:#100b1d;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.nav-links.open{display:flex}.menu-btn{display:block}.nav-actions .btn{display:none}h1{letter-spacing:-2.5px}.hero{min-height:0;padding:66px 0 45px}.visual{min-height:330px;transform:scale(.85);margin:-15px -25px}.orb{width:260px;height:260px}.orbit{width:350px;height:140px}.float-card-one{right:-5px}.float-card-two{left:-5px}.grid,.project-grid{grid-template-columns:1fr 1fr}.feature{padding:17px;min-height:205px}.about-panel{padding:20px}.about-art{min-height:180px}section{padding:58px 0}.cta{padding:27px 19px}}
+    @media(max-width:390px){.grid,.project-grid{grid-template-columns:1fr}.hero-buttons .btn{width:100%}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  </style>
 </head>
 <body>
-<header>
-  <nav>
-    <div class="logo">ROHIT'S WORLD</div>
-    <div><a href="#home">होम</a><a href="#about">परिचय</a><a href="#goals">लक्ष्य</a><a href="#projects">प्रोजेक्ट</a><a href="#contact">संपर्क</a></div>
-  </nav>
-</header>
-<main>
-  <section class="hero" id="home">
-    <div class="eyebrow">Welcome to my website</div>
-    <h1>नमस्ते, मैं <span>Rohit</span> हूँ।</h1>
-    <p class="lead">यह मेरी छोटी-सी डिजिटल दुनिया है—जहाँ मैं अपने बारे में, अपने लक्ष्यों और अपने काम के बारे में साझा करता हूँ।</p>
-    <div><a class="btn" href="#about">मेरे बारे में जानें</a></div>
-  </section>
-  <section id="about">
-    <h2>मेरे बारे में</h2>
-    <div class="card"><p>मेरा नाम Rohit है। मुझे नई चीजें सीखना, नए विचारों पर काम करना और अपनी क्षमताओं को बेहतर बनाना पसंद है। यह वेबसाइट मेरा personal portfolio है।</p></div>
-  </section>
-  <section id="goals">
-    <h2>मेरे लक्ष्य</h2>
-    <div class="grid">
-      <div class="card"><h3>सीखना</h3><p>हर दिन कुछ नया सीखना और अपने ज्ञान को बढ़ाना।</p></div>
-      <div class="card"><h3>बनाना</h3><p>अपने विचारों को उपयोगी projects में बदलना।</p></div>
-      <div class="card"><h3>आगे बढ़ना</h3><p>मेहनत, धैर्य और निरंतर अभ्यास से अपने लक्ष्य हासिल करना।</p></div>
-    </div>
-  </section>
-  <section id="projects">
-    <h2>मेरे प्रोजेक्ट</h2>
-    <div class="card"><h3>जल्द आ रहा है!</h3><p>यहाँ Rohit अपने बनाए हुए projects, उपलब्धियाँ और काम जोड़ सकता है।</p></div>
-  </section>
-  <section id="contact">
-    <h2>संपर्क</h2>
-    <div class="card"><p>यहाँ अपना सार्वजनिक ईमेल या सोशल मीडिया लिंक जोड़ें। निजी फोन नंबर या घर का पता सार्वजनिक वेबसाइट पर साझा न करें।</p></div>
-  </section>
-</main>
-<footer>© 2026 Rohit's World · Made with curiosity</footer>
+  <div class="nav-wrap">
+    <nav class="container">
+      <a class="brand" href="#home" aria-label="Rohit's World home"><span class="brand-mark"><span>R</span></span> ROHIT'S <span class="gradient-text">WORLD</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a><a href="#explore">Explore</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle light and dark theme">☼</button>
+        <a class="btn btn-primary" href="#explore">Explore World ↗</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu">☰</button>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+    <header class="container hero" id="home">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> WELCOME TO MY DIGITAL UNIVERSE</div>
+        <h1>Ideas become<br><span class="gradient-text">possibilities.</span></h1>
+        <p class="hero-copy">Hey, I'm Rohit. Welcome to my world — a place for creativity, learning, technology and the projects I'm building along the way.</p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#explore">Explore My World <span>↗</span></a>
+          <a class="btn btn-ghost" href="#about">Get to Know Me</a>
+        </div>
+        <div class="mini-proof"><div class="avatar-stack"><span>✦</span><span>R</span><span>∞</span></div><span>Curious mind. Creative journey. Endless learning.</span></div>
+      </div>
+      <div class="visual" aria-label="Abstract purple glowing digital planet illustration">
+        <div class="orbit"></div><div class="orb"></div>
+        <div class="glass-card float-card-one"><div class="spark">✧ &nbsp;CREATIVE SPACE</div><div class="glass-label">A universe of ideas</div></div>
+        <div class="glass-card float-card-two"><div class="glass-label">CURRENT FOCUS</div><div class="glass-value">Learn · Build · Grow <span class="spark">↗</span></div></div>
+      </div>
+    </header>
+
+    <section class="container" id="explore">
+      <div class="section-head reveal"><div><div class="kicker">Explore the universe</div><h2>One world. Many possibilities.</h2></div><p class="section-desc">Discover the different spaces inside Rohit's World. More experiences and useful resources will be added as the platform grows.</p></div>
+      <div class="grid">
+        <a class="feature reveal" href="#education"><div class="feature-icon">🎓</div><h3>Rohit Academy</h3><p>Study resources, notes, quizzes and learning guides.</p><span class="arrow">Explore learning ↗</span></a>
+        <a class="feature reveal" href="#ai-tools"><div class="feature-icon">✧</div><h3>AI Tools</h3><p>A curated space for helpful AI and productivity tools.</p><span class="arrow">Discover tools ↗</span></a>
+        <a class="feature reveal" href="#fun-zone"><div class="feature-icon">🎮</div><h3>Fun Zone</h3><p>Quizzes, puzzles and little challenges for your brain.</p><span class="arrow">Have some fun ↗</span></a>
+        <a class="feature reveal" href="#projects"><div class="feature-icon">⌘</div><h3>My Projects</h3><p>Websites, experiments and things I'm proud to build.</p><span class="arrow">View projects ↗</span></a>
+      </div>
+    </section>
+
+    <section class="container" id="about">
+      <div class="about-panel reveal">
+        <div class="about-art">🌌</div>
+        <div><div class="kicker">A little about me</div><h2>Curiosity is where it all begins.</h2><p>I'm Rohit — an enthusiastic learner exploring technology, creativity and the digital world. This website is my online space to share what I learn, showcase what I create and connect with people who love new ideas.</p><a class="btn btn-ghost" href="#contact">Let's connect ↗</a></div>
+      </div>
+    </section>
+
+    <section class="container" id="projects">
+      <div class="section-head reveal"><div><div class="kicker">Made with curiosity</div><h2>Featured spaces</h2></div><p class="section-desc">A preview of what this digital universe is growing into.</p></div>
+      <div class="project-grid">
+        <article class="project reveal"><div class="project-top">📚</div><h3 id="education">Learning Hub</h3><p>A future home for notes, chapter guides and practice quizzes.</p></article>
+        <article class="project reveal"><div class="project-top">🤖</div><h3 id="ai-tools">AI Discovery</h3><p>Useful tools and resources to make learning and creating easier.</p></article>
+        <article class="project reveal"><div class="project-top">🧩</div><h3 id="fun-zone">Brain Playground</h3><p>Quick games, puzzles and interactive challenges to enjoy.</p></article>
+      </div>
+    </section>
+
+    <section class="container" id="contact">
+      <div class="cta reveal"><div class="kicker">Stay connected</div><h2>Have an idea? Let's make it real.</h2><p>Have a suggestion, want to collaborate or just want to say hello? I'd love to hear from you.</p><a class="btn btn-primary" href="mailto:hello@example.com?subject=Hello%20Rohit">Get in Touch ↗</a><p style="font-size:.75rem;margin-bottom:0">Replace hello@example.com with your preferred email address.</p></div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><span>© <span id="year"></span> Rohit's World. Built with curiosity.</span><span>Your Ideas. Your Skills. Your Digital Universe.</span></div></footer>
+  <script>
+    const menuBtn=document.getElementById('menuBtn');
+    const navLinks=document.getElementById('navLinks');
+    menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>navLinks.classList.remove('open')));
+    document.getElementById('themeToggle').addEventListener('click',()=>document.body.classList.toggle('light'));
+    document.getElementById('year').textContent=new Date().getFullYear();
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  </script>
 </body>
 </html>
